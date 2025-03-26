@@ -1,0 +1,4 @@
+function vaildaFaleConosco()
+{
+alert("achou!");
+}
