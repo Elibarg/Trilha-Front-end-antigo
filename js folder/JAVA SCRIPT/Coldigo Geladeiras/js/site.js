@@ -28,6 +28,13 @@ function vaildaFaleConosco()
                     return false;
                 }
 
+                if(document.frmfaleconosco.selproduto.value=="")
+                    {
+                        alert("Preencha o campo Produto");
+                        document.frmfaleconosco.selproduto.focus();
+                        return false;
+                    }
+
                 if(document.frmfaleconosco.txtcomentario.value=="")
                     {
                         alert("Preencha o campo Comentário");
@@ -49,6 +56,17 @@ function verificarMotivo(motivo)
         //Conteúdo altual da varialve selct:
         // <select name="selproduto"></select>
         
+        //Criamos um Elemento (tag) <option> e gardamos na variável homônica
+        var option = document.createElement("option");
+        //setamos nesse novo option o atributo 'value' com o valor "vazio"
+        option.setAttribute("value","");
+        //criamos um nó de texto "Escolha" e gravamos na variavel 'texto'
+        var texto = document.createTextNode("Escolha");
+
+         //Colocamos o option como "filho" da tag select criada
+         select.appendChild(texto);
+         //Conteúdo atual da variálve select
+
         //Colocamos o option como "filho" da tag select criada
         select.appendChild(option);
         //Conteúdo atual da variálve select
@@ -63,11 +81,10 @@ function verificarMotivo(motivo)
         //Colocamos o nó de texto críado como "filho" da tag option criada
         option.appendChild(texto);
         //Conteúdo atual da variálve option
-        //<option value="FR">Freazer</option>
+        //<option value="">Escolha</option>
 
         select.appendChild(option);
         //Conteúdo atual da variálve select
-
         //<select name="selproduto">
         //<option value="">Escolhas</option><option value="FR">Freazer</option>
         //</select>
